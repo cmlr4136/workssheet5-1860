@@ -1,0 +1,28 @@
+CHIP A5Q2 201816995 {
+
+IN L,K,N;
+OUT V;
+
+PARTS:
+// Nots Needed
+Not(in=N, out=NotN);
+Not(in=L, out=NotL);
+
+// Or K, L 
+Or(a=K, b=L, out=OrKL);
+
+// And K, NotL 
+And(a=K, b=NotL, out=AndKNotL);
+
+// Part 2 parts 
+Or(a=OrKL, b=AndKNotL, out=Part2);
+
+//V Output
+And(a=NotN, b=Part2, out=V);
+
+
+
+
+
+
+}
